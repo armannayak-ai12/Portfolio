@@ -124,11 +124,16 @@ function Home({ go }) {
           <span className="cursor" />
         </div>
 
-        <h1 className="hero-name">Arman Nayak</h1>
-        <p className="hero-role">
-          Building AI-powered systems across web, mobile, and embedded hardware —
-          from trading-signal dashboards to fire-detection sensor networks.
-        </p>
+        <div className="hero-top">
+          <div>
+            <h1 className="hero-name">Arman Nayak</h1>
+            <p className="hero-role">
+              Building AI-powered systems across web, mobile, and embedded hardware —
+              from trading-signal dashboards to fire-detection sensor networks.
+            </p>
+          </div>
+          <img className="hero-photo" src="/profile.jpg" alt="Arman Nayak" />
+        </div>
 
         <div className="hero-actions">
           <button className="btn btn-primary" onClick={() => go("projects")}>
@@ -511,6 +516,20 @@ export default function App() {
         }
         @keyframes blink { 50% { opacity: 0; } }
 
+        .hero-top {
+          display: flex; align-items: flex-start; justify-content: space-between;
+          gap: 28px; margin-bottom: 28px;
+        }
+        .hero-photo {
+          width: 112px; height: 112px; border-radius: 50%;
+          object-fit: cover; flex-shrink: 0;
+          border: 1px solid var(--panel-border);
+          box-shadow: 0 0 0 4px rgba(77,232,176,0.08);
+        }
+        @media (max-width: 640px) {
+          .hero-top { flex-direction: column-reverse; }
+          .hero-photo { width: 84px; height: 84px; }
+        }
         .hero-name {
           font-family: 'IBM Plex Mono', monospace;
           font-size: clamp(36px, 7vw, 64px);
@@ -518,7 +537,7 @@ export default function App() {
         }
         .hero-role {
           color: var(--text-muted); font-size: 16px; line-height: 1.6;
-          max-width: 560px; margin: 0 0 28px;
+          max-width: 560px; margin: 0;
         }
         .hero-actions { display: flex; gap: 12px; margin-bottom: 44px; flex-wrap: wrap; }
 
