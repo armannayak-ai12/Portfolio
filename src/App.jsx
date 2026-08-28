@@ -521,14 +521,14 @@ export default function App() {
           gap: 28px; margin-bottom: 28px;
         }
         .hero-photo {
-          width: 112px; height: 112px; border-radius: 50%;
+          width: 180px; height: 112px; border-radius: 50%;
           object-fit: cover; flex-shrink: 0;
           border: 1px solid var(--panel-border);
           box-shadow: 0 0 0 4px rgba(77,232,176,0.08);
         }
         @media (max-width: 640px) {
           .hero-top { flex-direction: column-reverse; }
-          .hero-photo { width: 84px; height: 84px; }
+          .hero-photo { width: 130px; height: 130px; }
         }
         .hero-name {
           font-family: 'IBM Plex Mono', monospace;
